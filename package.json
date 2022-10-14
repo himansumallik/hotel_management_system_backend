@@ -1,0 +1,23 @@
+{
+  "name": "hotel_management_system_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Himansumallick/hotel_management_system_backend.git"
+  },
+  "author": "himansu mallick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Himansumallick/hotel_management_system_backend/issues"
+  },
+  "homepage": "https://github.com/Himansumallick/hotel_management_system_backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
