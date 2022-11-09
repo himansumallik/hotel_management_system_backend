@@ -9,10 +9,14 @@ const fetchAllRooms = async () => {
   return response.rows.map((room) => {
     return {
       ...room,
-      image: room.image ? `${ROOM_IMAGE_BASE_URL}/${room.image}` : undefined,
+      image: room.room_image
+        ? `${ROOM_IMAGE_BASE_URL}/${room.room_image}`
+        : undefined,
     };
   });
 };
+
+const addRoomsToDb = async () => {};
 
 module.exports = {
   fetchAllRooms,
