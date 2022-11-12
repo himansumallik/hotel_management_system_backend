@@ -16,8 +16,42 @@ const fetchAllRooms = async () => {
   });
 };
 
-const addRoomsToDb = async () => {};
+const addRoomsToDb = async (roomData) => {
+  const {
+    room_number,
+    occupants_capacity,
+    number_of_bed,
+    has_ac,
+    is_seafacing,
+    has_sunset_view,
+    price,
+    room_image,
+  } = roomData;
+
+  const insertQuery = `INSERT INTO rooms (
+      room_number,
+      occupants_capacity,
+      number_of_bed,
+      has_ac,
+      is_seafacing,
+      has_sunset_view,
+      price,
+      room_image)
+    VALUES (
+      '${room_number}',
+      '${occupants_capacity}',
+      '${number_of_bed}',
+      '${has_ac}',
+      '${is_seafacing}',
+      '${has_sunset_view}',
+      '${price}',
+      '${room_image}'
+    ); `;
+
+  await dbhandler.query(insertQuery);
+};
 
 module.exports = {
   fetchAllRooms,
+  addRoomsToDb,
 };

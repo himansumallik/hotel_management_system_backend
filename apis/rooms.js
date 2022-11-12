@@ -50,6 +50,8 @@ router.post("/signin", async (req, res) => {
 
 router.post("/localSignin/addRoom", async (req, res) => {
   try {
+    const addedRoom = await roomService.addRoomsToDb(req.body);
+    return res.json({ success: true });
   } catch (error) {
     return res.send({ success: false, message: error.message });
   }

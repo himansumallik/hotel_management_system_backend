@@ -6,7 +6,10 @@ const cors = require("cors");
 const allApis = require("./apis");
 
 app.use(cors());
+
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
 app.use("/static", express.static("assets"));
 
 app.use("/api", allApis);
