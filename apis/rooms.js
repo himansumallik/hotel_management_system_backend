@@ -2,7 +2,6 @@ const router = require("express").Router();
 require("dotenv").config();
 const express = require("express");
 const dbhandler = require("../databasehandler");
-const roomService = require("../databaseServices/room");
 const jwt = require("jsonwebtoken");
 router.use(express.json());
 
@@ -43,15 +42,6 @@ router.post("/signin", async (req, res) => {
     } else {
       throw new Error("Invalid Credentials");
     }
-  } catch (error) {
-    return res.send({ success: false, message: error.message });
-  }
-});
-
-router.post("/localSignin/addRoom", async (req, res) => {
-  try {
-    const addedRoom = await roomService.addRoomsToDb(req.body);
-    return res.json({ success: true });
   } catch (error) {
     return res.send({ success: false, message: error.message });
   }

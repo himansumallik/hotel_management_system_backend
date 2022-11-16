@@ -1,0 +1,36 @@
+import axios from "axios";
+
+axios.defaults.baseURL = "http://localhost:8000/api"
+
+export const getAllPersons = (options) => {
+    return axios.get("/persons", {params: options}).then((res)=>{
+        return res.data.data;
+    }).catch(err => {
+        console.log(err);
+        return null;
+    });
+}
+
+export const addPerson = (personFormData) => {
+    return axios.post("/persons", personFormData).then((res)=>{
+        return res.data;
+    }).catch(err => {
+        return err.response.data;
+    });
+}
+
+export const deletePerson = (id) => {
+    return axios.delete(`/persons/${id}`).then((res)=>{
+        return res.data;
+    }).catch(err => {
+        return err.response.data;
+    });
+}
+
+export const updatePerson = (id) => {
+    return axios.put(`/persons/${id}`).then((res)=>{
+        return res.data;
+    }).catch(err => {
+        return err.response.data;
+    });
+}
