@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const roomService = require("../databaseServices/room");
+const multer = require("multer");
 const fs = require("fs");
 
-const multer = require("multer");
 const roomsApi = require("./rooms");
+const roomService = require("../databaseServices/room");
 
 router.use("/rooms", roomsApi);
 
@@ -13,7 +13,6 @@ router.use(
   async (req, res) => {
     try {
       const { path, originalname } = req.file;
-
       const readStream = fs.createReadStream(path);
 
       const fileStream = fs.createWriteStream(`assets/images/${originalname}`);

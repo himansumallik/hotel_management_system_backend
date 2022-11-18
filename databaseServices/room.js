@@ -38,13 +38,13 @@ const addRoomsToDb = async (roomData) => {
       price,
       room_image)
     VALUES (
-      '${room_number}',
-      '${occupants_capacity}',
-      '${number_of_bed}',
+      ${room_number},
+      ${occupants_capacity},
+      ${number_of_bed},
       '${has_ac}',
       '${is_seafacing}',
       '${has_sunset_view}',
-      '${price}',
+      ${price},
       '${room_image}'
     ); `;
 

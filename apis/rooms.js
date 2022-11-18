@@ -1,7 +1,7 @@
 const router = require("express").Router();
 require("dotenv").config();
 const express = require("express");
-const dbhandler = require("../databasehandler");
+const roomService = require("../databaseServices/room");
 const jwt = require("jsonwebtoken");
 router.use(express.json());
 
