@@ -15,5 +15,5 @@ app.use("/static", express.static("assets"));
 app.use("/api", allApis);
 
 app.listen(9000, async () => {
-  console.log("Server running on port 9000...");
+  console.log("Server running on port 9000 with react...");
 });
